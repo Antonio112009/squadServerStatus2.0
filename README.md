@@ -6,26 +6,26 @@
 Creator: \[LANCE\]Tony Anglichanin (Tony Anglichanin#0007)
 
 
-#SquadServers
+# SquadServers
 
 Open source discord bot that displays number of people on squad servers, map and mode.
 
 <img src="https://github.com/Antonio112009/squadServerStatus2.0/blob/master/screenshots/screensho1.png?raw=true" width="400" height="auto">
 
-#####Navigation:
+##### Navigation:
 * [Add bot to your Discord server](#Add-bot-to-your-Discord-server)
 * [Guide](##Guide)
 * [Commands](#Commands)
 
 
-##Add bot to your Discord server 
+## Add bot to your Discord server 
 
 To add bot to your server - simply [press this link](https://discordapp.com/oauth2/authorize?client_id=562952086438936586&scope=bot&permissions=8)
 
-##Guide
+## Guide
 To see how to set up bot on your server - go to [SquadServer wiki page](https://github.com/Antonio112009/squadServerStatus2.0/wiki).
 
-##Commands
+## Commands
 Here's a list of all commands that are implemented in the bot:
 
 * everyone - public command
