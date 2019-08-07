@@ -12,7 +12,7 @@ Open source discord bot that displays number of people on squad servers, map and
 
 <img src="https://github.com/Antonio112009/squadServerStatus2.0/blob/master/screenshots/screensho1.png?raw=true" width="400" height="auto">
 
-##### Navigation:
+## Navigation:
 * [Add bot to your Discord server](#Add-bot-to-your-Discord-server)
 * [Guide](##Guide)
 * [Commands](#Commands)
