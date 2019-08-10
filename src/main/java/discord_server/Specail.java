@@ -45,18 +45,25 @@ public class Specail extends ListenerAdapter {
     }
 
     public void getGuildsLinks() {
-        StringBuilder text = new StringBuilder();
         for(Guild guild : event.getJDA().getGuilds()){
             try {
-                text.append("link: ").append(guild.getDefaultChannel().createInvite().complete().getUrl()).append("\n\n");
-            } catch (Exception e){
-                text.append("\n\n");
+                guild.getTextChannels().get(0).createInvite().queue(
+                        (e) -> event.getChannel().sendMessage("link: " + e.getUrl() + "\n\n").queue(
+                                (m) -> m.delete().queueAfter(minutes, TimeUnit.MINUTES)
+                        )
+                );
+            } catch (Exception ignored){
             }
         }
-
-        event.getChannel().sendMessage(text.toString()).queue(
-                (m) -> m.delete().queueAfter(minutes, TimeUnit.MINUTES)
-        );
     }
 
+    public void getGuildLink(String context) {
+        try {
+            event.getJDA().getGuildById(context.split(" ")[1]).getTextChannels().get(0).createInvite().queue(
+                    (e) -> event.getChannel().sendMessage(e.getUrl()).queue()
+            );
+        } catch (Exception e){
+            event.getChannel().sendMessage("Invitation cannot be created").queue();
+        }
+    }
 }

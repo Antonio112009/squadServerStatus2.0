@@ -55,6 +55,10 @@ public class Private extends ListenerAdapter {
                 return;
             }
 
+            if(command.equals("ss/guild_link")){
+                new Specail(event).getGuildLink(contexts);
+            }
+
             if(command.equals("ss/channels")){
                 String text = "";
                 for(TextChannel channel : event.getJDA().getGuildById(contexts.split(" ")[1]).getTextChannels()){
