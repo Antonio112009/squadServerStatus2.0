@@ -34,8 +34,6 @@ public class Guilds {
     @JoinColumn(name = "language_id", unique = true)
     private Language language;
 
-
-
     @OneToMany(
             mappedBy = "guild",
             cascade = CascadeType.ALL,

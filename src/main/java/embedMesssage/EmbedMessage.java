@@ -81,7 +81,7 @@ public class EmbedMessage {
         embed.setAuthor(name);
         embed.setDescription("Server status: **" + status + "**\n" +
                 "Server id: **" + server_id + "**");
-        embed.addField("Players", players, true);
+        embed.addField("Players", "[" + players + "](https://www.battlemetrics.com/servers/squad/" + server_id + ")", true);
         embed.addField("Map and mod",map, true);
         embed.setTimestamp(Instant.now());
         embed.addField("Join server: ",joinServer, false);

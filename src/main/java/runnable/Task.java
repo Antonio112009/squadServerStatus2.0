@@ -51,7 +51,7 @@ public class Task {
 
                                 String players = attrJSON.get("players").getAsString() + "/" + attrJSON.get("maxPlayers").getAsString();
 
-                                double percent = (Double.valueOf(attrJSON.get("players").getAsString()) / Double.valueOf(attrJSON.get("maxPlayers").getAsString())) * 100;
+                                double percent = (Double.parseDouble(attrJSON.get("players").getAsString()) / Double.parseDouble(attrJSON.get("maxPlayers").getAsString())) * 100;
 
                                 Color color = ColorChoose.getColor(percent);
 

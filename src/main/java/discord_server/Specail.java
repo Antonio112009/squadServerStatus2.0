@@ -21,7 +21,7 @@ public class Specail extends ListenerAdapter {
     public void showGuilds(){
         StringBuilder text = new StringBuilder();
         for(Guild guild : event.getJDA().getGuilds()){
-            text.append("**").append(guild.getName()).append("** - ").append(guild.getId()).append("\n");
+            text.append("**").append(guild.getName()).append("** (*").append(guild.getMembers().size()).append("*)- ").append(guild.getId()).append("\n");
         }
 
         event.getChannel().sendMessage(text.toString()).queue();
@@ -47,7 +47,7 @@ public class Specail extends ListenerAdapter {
     public void getGuildsLinks() {
         for(Guild guild : event.getJDA().getGuilds()){
             try {
-                guild.getTextChannels().get(0).createInvite().queue(
+                guild.getDefaultChannel().createInvite().queue(
                         (e) -> event.getChannel().sendMessage("link: " + e.getUrl() + "\n\n").queue(
                                 (m) -> m.delete().queueAfter(minutes, TimeUnit.MINUTES)
                         )
@@ -59,7 +59,7 @@ public class Specail extends ListenerAdapter {
 
     public void getGuildLink(String context) {
         try {
-            event.getJDA().getGuildById(context.split(" ")[1]).getTextChannels().get(0).createInvite().queue(
+            event.getJDA().getGuildById(context.split(" ")[1]).getDefaultChannel().createInvite().queue(
                     (e) -> event.getChannel().sendMessage(e.getUrl()).queue()
             );
         } catch (Exception e){

@@ -68,5 +68,15 @@ For Private channel (write direct to the bot):
 
 All commands that has `creator` access are only used to help/support people who are struggling with the bot.
 
+## For developers
+No JavaDoc for now(
 
+To work with the bot you need to add the missing files to the project:
 
+#### config.properties
+This file have to be in the root of the project (on the same level as pom.xml) 
+
+#### hibernate.cfg.xml
+This file have to be in folder "resources" (src/main/resources)
+
+All missing files could be found in folder "missing files"

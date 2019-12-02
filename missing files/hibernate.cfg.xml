@@ -1,0 +1,58 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!--LOCAL-->
+        <!--<property name="connection.url"></property>-->
+        <!--<property name="connection.username"></property>-->
+        <!--<property name="connection.password"></property>-->
+
+        <!--SERVER-->
+        <property name="connection.url"></property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+
+
+        <property name="connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+        <property name="hibernate.hikari.connectionTimeout">20000</property>
+        <property name="hibernate.hikari.minimumIdle">10</property>
+        <property name="hibernate.hikari.maximumPoolSize">20</property>
+        <property name="hibernate.hikari.idleTimeout">300000</property>
+
+        <!-- Select our SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo the SQL in command line -->
+        <property name="show_sql">false</property>
+        <!--<property name="show_sql">true</property>-->
+
+        <!-- Set the current session context -->
+        <property name="current_session_context_class">thread</property>
+
+        <!--
+        IT'S OPTIONAL!!!!! No need to use in deployment
+
+        validate: validates the schema, no change happens to the database.
+        update: updates the schema with current execute query.
+        create: creates new schema every time, and destroys previous data.
+        create-drop: drops the schema when the application is stopped or SessionFactory is closed explicitly.
+        -->
+        <!--<property name="hbm2ddl.auto">create</property>-->
+        <!--<property name="hbm2ddl.auto">create-drop</property>-->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+        <property name="hbm2ddl.auto">validate</property>
+
+        <mapping class="entities.Guilds" />
+        <mapping class="entities.Servers" />
+        <mapping class="entities.Authorities" />
+        <mapping class="entities.Language" />
+        <mapping class="entities.ServerMessage" />
+        <mapping class="entities.MessageServer" />
+
+
+    </session-factory>
+</hibernate-configuration>
